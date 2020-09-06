@@ -79,14 +79,42 @@ class CalculatorTest {
     @DisplayName("Metoda powinna zwracać wynik dzielenia 4 przez 4")
     void resultDivided(){
         //given
-        int arg1 = 4;
-        int arg2 = 4;
+        double arg1 = 4;
+        double arg2 = 4;
 
         //when
-        int actual = sut.division(arg1,arg2);
+        double actual = sut.division(arg1,arg2);
 
         //then
         assertEquals(1, actual);
+
+    }
+    @Test
+    @DisplayName("Metoda powinna zwracać wynik dzielenia 4 przez 0")
+    void resultDividedFourByZero(){
+        //given
+        double arg1 = 4;
+        double arg2 = 0;
+
+        //when
+        double actual = sut.division(arg1,arg2);
+
+        //then
+        assertEquals(0, actual);
+
+    }
+    @Test
+    @DisplayName("Metoda powinna zwracać wynik dzielenia 0 przez 4")
+    void resultDividedZeroByFour(){
+        //given
+        double arg1 = 0;
+        double arg2 = 4;
+
+        //when
+        double actual = sut.division(arg1,arg2);
+
+        //then
+        assertEquals(0, actual);
 
     }
 
